@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 // Étape 3.1 — READ : Chercher par ID
 router.get('/:id', async (req, res) => {
-    try {
+    try { 
         const pokemon = await Pokemon.findOne({ id: req.params.id });
         if (!pokemon) return res.status(404).json({ error: 'Pokémon non trouvé' });
         res.json(pokemon);
